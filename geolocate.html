@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title>GeoLocation Test</title>
+        
+        
+    </head>
+    <body>
+        
+        <button id="getPositionButton">Get Position</button>
+       
+       
+       <script src="media/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+       <script src="media/js/jquery.geolocation.js" type="text/javascript" charset="utf-8"></script>
+        
+       <script>
+            
+           function alertMyPosition(position) {
+               alert("Your position is " + position.coords.latitude + ", " + position.coords.longitude);
+           }
+            
+            
+           function noLocation(error) {
+               alert("No location info available. Error code: " + error.code);
+           }
+            
+           $('#getPositionButton').bind('click', function() {
+               console.debug('asd')
+               $.geolocation.get({win: alertMyPosition, fail: noLocation});
+           });
+        
+        
+        
+        
+       </script>
+       
+        
+    </body>
+</html>
